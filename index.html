@@ -1,0 +1,1474 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>كايزن | Kaizen - خلفيات وبرامج</title>
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    <!-- نهاية Google Analytics -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0a0a0a;
+            --bg-secondary: #121212;
+            --bg-card: #1a1a1a;
+            --bg-hover: #252525;
+            --accent-primary: #00ff88;
+            --accent-secondary: #00ccff;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0a0;
+            --border-color: #2a2a2a;
+            --shadow-glow: 0 0 30px rgba(0, 255, 136, 0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            min-height: 100vh;
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(0, 255, 136, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(0, 204, 255, 0.05) 0%, transparent 50%);
+            background-attachment: fixed;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            padding: 40px 0 20px;
+            text-align: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        .logo-container {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        .logo-text {
+            font-family: 'Outfit', sans-serif;
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 2px;
+        }
+
+        .logo-divider {
+            width: 2px;
+            height: 40px;
+            background: linear-gradient(to bottom, transparent, var(--accent-primary), transparent);
+        }
+
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            margin-top: 10px;
+            animation: fadeIn 1s ease-out 0.3s both;
+        }
+
+        /* Search Box */
+        .search-container {
+            max-width: 600px;
+            margin: 30px auto;
+            position: relative;
+            animation: fadeIn 1s ease-out 0.5s both;
+        }
+
+        .search-box {
+            width: 100%;
+            padding: 18px 55px 18px 20px;
+            background: var(--bg-card);
+            border: 2px solid var(--border-color);
+            border-radius: 50px;
+            color: var(--text-primary);
+            font-size: 1.1rem;
+            font-family: 'Cairo', sans-serif;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .search-box:focus {
+            border-color: var(--accent-primary);
+            box-shadow: 0 0 20px rgba(0, 255, 136, 0.2);
+            background: var(--bg-secondary);
+        }
+
+        .search-box::placeholder {
+            color: var(--text-secondary);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.3rem;
+            color: var(--accent-primary);
+            pointer-events: none;
+        }
+
+        .search-results-info {
+            text-align: center;
+            margin: 20px 0;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            display: none;
+        }
+
+        .search-results-info.active {
+            display: block;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 60px 20px;
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            display: none;
+        }
+
+        .no-results.active {
+            display: block;
+        }
+
+        .no-results .icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            opacity: 0.5;
+        }
+
+        .clear-search {
+            position: absolute;
+            left: 60px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+            cursor: pointer;
+            padding: 5px;
+            display: none;
+            transition: color 0.3s ease;
+        }
+
+        .clear-search:hover {
+            color: var(--accent-primary);
+        }
+
+        .clear-search.active {
+            display: block;
+        }
+
+        /* AdSense Placeholder */
+        .ad-banner {
+            background: var(--bg-card);
+            border: 2px dashed var(--border-color);
+            border-radius: 12px;
+            padding: 40px 20px;
+            margin: 40px auto;
+            max-width: 970px;
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .ad-banner::before {
+            content: "📢 مساحة إعلانية - Google AdSense";
+            display: block;
+            margin-bottom: 10px;
+            color: var(--accent-primary);
+        }
+
+        /* Section Headers */
+        .section {
+            margin: 60px 0;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            background: linear-gradient(90deg, var(--text-primary), var(--text-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-count {
+            background: var(--bg-card);
+            color: var(--accent-primary);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border: 1px solid var(--border-color);
+        }
+
+        /* Grid */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 15px;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+
+        /* Card */
+        .card {
+            background: var(--bg-card);
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            position: relative;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(0, 255, 136, 0.1), rgba(0, 204, 255, 0.1));
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: 1;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: var(--accent-primary);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .card:hover::before {
+            opacity: 1;
+        }
+
+        .card-image {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            font-size: 2rem;
+            transition: transform 0.4s ease;
+        }
+
+        .card:hover .card-image {
+            transform: scale(1.05);
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 12px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .card-number {
+            display: inline-block;
+            background: var(--accent-primary);
+            color: var(--bg-primary);
+            padding: 3px 10px;
+            border-radius: 5px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .card-title {
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+            line-height: 1.3;
+        }
+
+        .card-description {
+            color: var(--text-secondary);
+            font-size: 0.75rem;
+            line-height: 1.4;
+        }
+
+        .card-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            border: 1px solid var(--border-color);
+            z-index: 3;
+        }
+
+        /* Program Cards - Larger Style */
+        .programs-grid {
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        }
+
+        .program-card {
+            background: linear-gradient(135deg, var(--bg-card) 0%, #1f1f1f 100%);
+        }
+
+        .program-card .card-image {
+            height: 180px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 60px 20px 40px;
+            border-top: 1px solid var(--border-color);
+            margin-top: 80px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+
+        .footer-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-link:hover {
+            color: var(--accent-primary);
+        }
+
+        .copyright {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-top: 20px;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 1400px) {
+            .grid {
+                grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .grid {
+                grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .logo-text {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+            
+            .grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+                gap: 12px;
+            }
+
+            .programs-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+
+            .programs-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Loading Animation */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid var(--border-color);
+            border-top-color: var(--accent-primary);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div class="logo-container">
+                <span class="logo-text">KAIZEN</span>
+                <div class="logo-divider"></div>
+                <span class="logo-text" style="font-family: 'Cairo', sans-serif;">كايزن</span>
+            </div>
+            <p class="subtitle">خلفيات وبرامج مميزة لسطح المكتب | Wallpapers & Programs</p>
+        </header>
+
+        <!-- Search Box -->
+        <div class="search-container">
+            <input 
+                type="text" 
+                id="searchInput" 
+                class="search-box" 
+                placeholder="🔍 ابحث برقم الخلفية أو اسمها أو اسم البرنامج..."
+                autocomplete="off"
+            >
+            <span class="search-icon">🔍</span>
+            <button class="clear-search" id="clearSearch">✕</button>
+        </div>
+
+        <!-- Search Results Info -->
+        <div class="search-results-info" id="searchResultsInfo"></div>
+
+        <!-- Ad Banner (Top) -->
+        <div class="ad-banner">
+            ضع كود Google AdSense هنا للإعلان العلوي
+        </div>
+
+        <!-- Wallpapers Section -->
+        <section class="section">
+            <div class="section-header">
+                <h2 class="section-title">🎨 الخلفيات | Wallpapers</h2>
+                <span class="section-count">80 خلفية</span>
+            </div>
+            <div class="grid" id="wallpapers-grid">
+                <!-- سيتم إضافة الخلفيات هنا -->
+            </div>
+        </section>
+
+        <!-- Ad Banner (Middle) -->
+        <div class="ad-banner">
+            ضع كود Google AdSense هنا للإعلان الأوسط
+        </div>
+
+        <!-- Programs Section -->
+        <section class="section">
+            <div class="section-header">
+                <h2 class="section-title">💻 البرامج | Programs</h2>
+                <span class="section-count">6 برامج</span>
+            </div>
+            <div class="grid programs-grid" id="programs-grid">
+                <!-- سيتم إضافة البرامج هنا -->
+            </div>
+        </section>
+
+        <!-- No Results Message -->
+        <div class="no-results" id="noResults">
+            <div class="icon">🔍</div>
+            <p>لم يتم العثور على نتائج</p>
+            <p style="font-size: 0.9rem; margin-top: 10px;">جرب البحث برقم آخر أو كلمة مختلفة</p>
+        </div>
+
+        <!-- Ad Banner (Bottom) -->
+        <div class="ad-banner">
+            ضع كود Google AdSense هنا للإعلان السفلي
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <div class="footer-links">
+                <a href="#" class="footer-link">
+                    <span>📱</span>
+                    <span>تيك توك</span>
+                </a>
+                <a href="#" class="footer-link">
+                    <span>📸</span>
+                    <span>انستقرام</span>
+                </a>
+                <a href="#" class="footer-link">
+                    <span>▶️</span>
+                    <span>يوتيوب</span>
+                </a>
+            </div>
+            <p class="copyright">© 2025 كايزن | Kaizen - جميع الحقوق محفوظة</p>
+        </footer>
+    </div>
+
+    <script>
+        // بيانات الخلفيات - عدل هنا لإضافة خلفياتك
+        const wallpapers = [
+            {
+                number: "1",
+                title: "House of dreams.",
+                description: "أضغط للتحميل",
+                thumbnail: "https://images.steamusercontent.com/ugc/2380802761797252760/13E99FE38F69630FA305D9A59EFB295D5E75F11D/?imw=637&imh=358&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true",
+                downloadLink: "https://steamcommunity.com/sharedfiles/filedetails/?id=3319542538"
+            },
+            {
+                number: "2",
+                title: "Lonely Cat: Audio visualizer , Clock , Chill , Multi language",
+                description: "أضغط للتحميل",
+                thumbnail: "https://images.steamusercontent.com/ugc/2468624856977543321/4203B7C68C326D61AE75AAF4F2CF4D9FCB36F4A4/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false",
+                downloadLink: "https://steamcommunity.com/sharedfiles/filedetails/?id=3299228616"
+            },
+            {
+                number: "3",
+                title: "Aesthetic City",
+                description: "أضغط للتحميل",
+                thumbnail: "https://images.steamusercontent.com/ugc/169283403625605219/3C45D60CFA5BE81B7865EEE6CB71B76B7826E7C5/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false",
+                downloadLink: "https://steamcommunity.com/sharedfiles/filedetails/?id=843532366"
+            },
+            {
+                number: "4",
+                title: "PixelBar",
+                description: "أضغط للتحميل",
+                thumbnail: "https://images.steamusercontent.com/ugc/1496838659836452878/350FEB85AF5DFE5AB89850A14EC5DC13AB6F1BD2/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false",
+                downloadLink: "https://steamcommunity.com/sharedfiles/filedetails/?id=2208730574"
+            },
+            {
+                number: "5",
+                title: "Astronaut [7680x2160] [Audio responsive]",
+                description: "أضغط للتحميل",
+                thumbnail: "https://images.steamusercontent.com/ugc/1760325166731497946/8F431D57DFE9C0C3D7D20B845D1BB9D56282EAD8/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false",
+                downloadLink: "https://steamcommunity.com/sharedfiles/filedetails/?id=2185197772"
+            },
+            {
+                number: "6",
+                title: "Voyager 4k {Artwork by BisBiswas}",
+                description: "أضغط للتحميل",
+                thumbnail: "https://images.steamusercontent.com/ugc/1768205520784816619/250901ECCB4E5F919A3A57DDC901477F8FD86B30/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false",
+                downloadLink: "https://steamcommunity.com/sharedfiles/filedetails/?id=2499486193"
+            },
+            {
+                number: "7",
+                title: "Gojo Satoru",
+                description: "أضغط للتحميل",
+                thumbnail: "https://images.steamusercontent.com/ugc/1822274875869646221/636669941E7526328BE54CF5C5547C62B4695064/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false",
+                downloadLink: "https://steamcommunity.com/sharedfiles/filedetails/?id=2778759553"
+            },
+            {
+                number: "8",
+                title: "Monkey D.Luffy [The Edge of the Forest] - One Piece [4K]",
+                description: "أضغط للتحميل",
+                thumbnail: "https://images.steamusercontent.com/ugc/1666860386293070460/47A0BA2F0C0726D07E7921035A91D7D8EA9070C3/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false",
+                downloadLink: "https://steamcommunity.com/sharedfiles/filedetails/?id=2330010075"
+            },
+            {
+                number: "9",
+                title: "Dream View. 3",
+                description: "أضغط للتحميل",
+                thumbnail: "https://images.steamusercontent.com/ugc/13052583756525827/4EF9C70E95B4BBF5E864AB89AA02B8C6B273E6FE/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false",
+                downloadLink: "https://steamcommunity.com/sharedfiles/filedetails/?id=3439318428"
+            },
+            {
+                number: "10",
+                title: "Wano Kuni One Piece (By Bewie)",
+                description: "أضغط للتحميل",
+                thumbnail: "https://images.steamusercontent.com/ugc/1860576126676025621/829B41A275B89765639EC2F19C8393BEBA233FC3/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false",
+                downloadLink: "https://steamcommunity.com/sharedfiles/filedetails/?id=2880155075"
+            },
+            {
+                number: "11",
+                title: "Dawn Of Humanity [4K]",
+                description: "أضغط للتحميل",
+                thumbnail: "https://images.steamusercontent.com/ugc/2487745594547578571/F6F8FECBDE91FDEF96C4C36A150B776758AC806A/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false",
+                downloadLink: "https://steamcommunity.com/sharedfiles/filedetails/?id=3163333989"
+            },
+            {
+                number: "12",
+                title: "Stray Feline",
+                description: "أضغط للتحميل",
+                thumbnail: "https://images.steamusercontent.com/ugc/2215269567726837065/95A20A8876E4202AA89B1C3B2509520D7A596EBE/?imw=268&imh=268&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true",
+                downloadLink: "https://steamcommunity.com/sharedfiles/filedetails/?id=3085606089"
+            },
+            {
+                number: "13",
+                title: "Pokemon House",
+                description: "أضغط للتحميل",
+                thumbnail: "https://images.steamusercontent.com/ugc/2429200606600615543/47EF8F40B055FAFA08EEC4F41677150719DC50AA/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false",
+                downloadLink: "https://steamcommunity.com/sharedfiles/filedetails/?id=3174079625"
+            },
+            {
+                number: "14",
+                title: "Home 家 - 4k",
+                description: "أضغط للتحميل",
+                thumbnail: "https://images.steamusercontent.com/ugc/2021608442571717607/ABD5E2C02E148BAC6FF5B7F4EF7519DDFBE2CA70/?imw=637&imh=358&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true",
+                downloadLink: "https://steamcommunity.com/sharedfiles/filedetails/?id=3034379000"
+            },
+            {
+                number: "15",
+                title: "Halloween Cat",
+                description: "أضغط للتحميل",
+                thumbnail: "https://images.steamusercontent.com/ugc/2115062479262485119/AEF59A1D237B7D869FCAEB6E21DEA5741541C0E6/?imw=637&imh=358&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true",
+                downloadLink: "https://steamcommunity.com/sharedfiles/filedetails/?id=3062175991"
+            },
+            {
+                number: "16",
+                title: "minimalist landscape- mountain and river 4k",
+                description: "أضغط للتحميل",
+                thumbnail: "https://images.steamusercontent.com/ugc/964233665630566597/B5B0BA5924C58DD388C85A7EF91FE4D4BFBC4DB3/?imw=637&imh=358&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true",
+                downloadLink: "https://steamcommunity.com/sharedfiles/filedetails/?id=1604225602"
+            },
+            {
+                number: "17",
+                title: "Sky Line Sakura [4K 244FPS] pt.2",
+                description: "أضغط للتحميل",
+                thumbnail: "https://images.steamusercontent.com/ugc/2449486548570741677/414DFBEF9508A726A96FD54539DA9619AFE854EF/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false",
+                downloadLink: "https://steamcommunity.com/sharedfiles/filedetails/?id=3346831410"
+            },
+            {
+                number: "18",
+                title: "Angled Waves",
+                description: "أضغط للتحميل",
+                thumbnail: "https://images.steamusercontent.com/ugc/2063250791068736714/FDCF595C6C2D4552CCF8B4554AC6A7BB38AD6E4A/?imw=637&imh=358&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true",
+                downloadLink: "https://steamcommunity.com/sharedfiles/filedetails/?id=2947302287"
+            },
+            {
+                number: "19",
+                title: "Dream View.",
+                description: "أضغط للتحميل",
+                thumbnail: "https://images.steamusercontent.com/ugc/13044320880050530/B5754AC47FB938500FC529C3931D7F46B0783E55/?imw=637&imh=358&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true",
+                downloadLink: "https://steamcommunity.com/sharedfiles/filedetails/?id=3379798119"
+            },
+            {
+                number: "20",
+                title: "Gargantua in Space 4K [Interstellar]",
+                description: "أضغط للتحميل",
+                thumbnail: "https://images.steamusercontent.com/ugc/2052003902295001771/896D9C00B8E4447DA23C036FDAE81E4758CE685B/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false",
+                downloadLink: "https://steamcommunity.com/sharedfiles/filedetails/?id=3011126896"
+            },
+            {
+                number: "21",
+                title: "Mount Fuji. Japan.",
+                description: "أضغط للتحميل",
+                thumbnail: "https://images.steamusercontent.com/ugc/17847680486964633099/85E4CB87CD9D8FA13B5FEC408F369D2252295FCB/?imw=637&imh=358&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true",
+                downloadLink: "https://steamcommunity.com/sharedfiles/filedetails/?id=3481819587"
+            },
+            {
+                number: "22",
+                title: "Green Home",
+                description: "أضغط للتحميل",
+                thumbnail: "https://images.steamusercontent.com/ugc/2466375048097106289/88C09701520FF16F9C0DFE7CE7B2CC60586EFFE1/?imw=637&imh=358&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true",
+                downloadLink: "https://steamcommunity.com/sharedfiles/filedetails/?id=3343525585"
+            },
+            {
+                number: "23",
+                title: "Torii Ruins 4k {Artwork by ItsEndy}",
+                description: "أضغط للتحميل",
+                thumbnail: "https://images.steamusercontent.com/ugc/2369545214020904125/8639F964C7754EDA5BA7763F3959AD96BF04D1E3/?imw=637&imh=358&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true",
+                downloadLink: "https://steamcommunity.com/sharedfiles/filedetails/?id=3332348532"
+            },
+            {
+                number: "24",
+                title: "Niko going to the Glen (Oneshot)",
+                description: "أضغط للتحميل",
+                thumbnail: "https://images.steamusercontent.com/ugc/921421772677440545/BDD9FE0B46E3901B2AEA659F8C6C1A6DE46EAE15/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false",
+                downloadLink: "https://steamcommunity.com/sharedfiles/filedetails/?id=1319209973"
+            },
+            {
+                number: "25",
+                title: "雷雨鸣鸣4K(有声)",
+                description: "أضغط للتحميل",
+                thumbnail: "https://images.steamusercontent.com/ugc/2456223158371351788/28644320969E5E9E326AB11286D36FD9B37F53D0/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false",
+                downloadLink: "https://steamcommunity.com/sharedfiles/filedetails/?id=3189812900"
+            },
+            {
+                number: "26",
+                title: "4K | Space | Mountains | Clouds | Stars",
+                description: "أضغط للتحميل",
+                thumbnail: "https://images.steamusercontent.com/ugc/2374028340492381785/34FA1781B53E169C69B2E691E4273A978A69981D/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false",
+                downloadLink: "https://steamcommunity.com/sharedfiles/filedetails/?id=3153866820"
+            },
+            {
+                number: "27",
+                title: "Space Pamper [4K]",
+                description: "أضغط للتحميل",
+                thumbnail: "https://images.steamusercontent.com/ugc/2108304796892793080/15430E4697DF9BA7A3C8ED17575BC865CEA6CFB8/?imw=637&imh=358&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true",
+                downloadLink: "https://steamcommunity.com/sharedfiles/filedetails/?id=3041448036"
+            },
+            {
+                number: "28",
+                title: "山晚-三叶-三葉漫剪",
+                description: "أضغط للتحميل",
+                thumbnail: "https://images.steamusercontent.com/ugc/2446098699624033809/9D9BDD1BE81F9F54295EB933C4181025AE4D4FF1/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false",
+                downloadLink: "https://steamcommunity.com/sharedfiles/filedetails/?id=3272717573"
+            },
+            {
+                number: "29",
+                title: "Sword in forest",
+                description: "أضغط للتحميل",
+                thumbnail: "https://images.steamusercontent.com/ugc/2280572215623221116/C6E03CD7FC03836D258661CB04C2F4592A8469BE/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false",
+                downloadLink: "https://steamcommunity.com/sharedfiles/filedetails/?id=3093126758"
+            },
+            {
+                number: "30",
+                title: "JIaNing 五条悟",
+                description: "أضغط للتحميل",
+                thumbnail: "https://images.steamusercontent.com/ugc/2167980409444092739/724144D705274F977DCD00BD0202B6A5563B642A/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false",
+                downloadLink: "https://steamcommunity.com/sharedfiles/filedetails/?id=3068495643"
+            },
+            {
+                number: "31",
+                title: "[4k] Artistic Landscape 1",
+                description: "أضغط للتحميل",
+                thumbnail: "https://images.steamusercontent.com/ugc/2067771513387568240/BA0C3CEAE3A5FE39354FBE2D9E3E0B199189E154/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false",
+                downloadLink: "https://steamcommunity.com/sharedfiles/filedetails/?id=3039279816"
+            },
+            {
+                number: "32",
+                title: "Fox on Planet #5",
+                description: "أضغط للتحميل",
+                thumbnail: "https://images.steamusercontent.com/ugc/2019356642745710236/BE2015C9E3433FF73023915AEF95BC7B963B1F23/?imw=637&imh=358&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true",
+                downloadLink: "https://steamcommunity.com/sharedfiles/filedetails/?id=3033188884"
+            },
+            {
+                number: "33",
+                title: "Marooned by VISUALDON (loop)",
+                description: "أضغط للتحميل",
+                thumbnail: "https://images.steamusercontent.com/ugc/1807641708329567178/613AC75CB0583056F8960794626CC7360EB8CC5F/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false",
+                downloadLink: "https://steamcommunity.com/sharedfiles/filedetails/?id=2797345490"
+            },
+            {
+                number: "34",
+                title: "SouredAppleClouds",
+                description: "أضغط للتحميل",
+                thumbnail: "https://images.steamusercontent.com/ugc/776240837133833912/F1616ACAA8908919F4D8D67CC366A94061665111/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false",
+                downloadLink: "https://steamcommunity.com/sharedfiles/filedetails/?id=1948961570"
+            },
+            {
+                number: "35",
+                title: "星空之城 4K",
+                description: "أضغط للتحميل",
+                thumbnail: "https://images.steamusercontent.com/ugc/2139832277226523277/5791AE2FF5AF96125993D2FB4B5A531818B5EA30/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false",
+                downloadLink: "https://steamcommunity.com/sharedfiles/filedetails/?id=3065071257"
+            },
+            {
+                number: "36",
+                title: "余霞成绮4K(有声)",
+                description: "أضغط للتحميل",
+                thumbnail: "https://images.steamusercontent.com/ugc/2512520367211254706/B91594B71CBD0683FEB8D9A01C4142BAF4D83FC7/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false",
+                downloadLink: "https://steamcommunity.com/sharedfiles/filedetails/?id=3035352006"
+            },
+            {
+                number: "37",
+                title: "Wrath of the Blood Moon",
+                description: "أضغط للتحميل",
+                thumbnail: "https://images.steamusercontent.com/ugc/2126320298800792022/B862DF28EE0F74E5BAC57D71D7B0258F4103B40E/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false",
+                downloadLink: "https://steamcommunity.com/sharedfiles/filedetails/?id=3050059111"
+            },
+            {
+                number: "38",
+                title: "Red Moon",
+                description: "أضغط للتحميل",
+                thumbnail: "https://images.steamusercontent.com/ugc/2291831214704182238/B654EFFD3F5954E5CAFB221761E76F3157F51347/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false",
+                downloadLink: "https://steamcommunity.com/sharedfiles/filedetails/?id=3095711758"
+            },
+            {
+                number: "39",
+                title: "Serene Japanese Town Backstreet",
+                description: "أضغط للتحميل",
+                thumbnail: "https://images.steamusercontent.com/ugc/2460734123322670139/4EA6974ED87340C698BDB745ECC2F730B868C04A/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false",
+                downloadLink: "https://steamcommunity.com/sharedfiles/filedetails/?id=3262885320"
+            },
+            {
+                number: "40",
+                title: "Taggen's Adventure",
+                description: "أضغط للتحميل",
+                thumbnail: "https://images.steamusercontent.com/ugc/2470860352565410900/37FB93AF3EE4CB02008FD96B408F3FC82272B234/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false",
+                downloadLink: "https://steamcommunity.com/sharedfiles/filedetails/?id=3165008448"
+            },
+            {
+                number: "41",
+                title: "Timeless. - ft. CozyBread",
+                description: "أضغط للتحميل",
+                thumbnail: "https://images.steamusercontent.com/ugc/2456239957979832755/2E902BC46EC672152DE937B836FD6303397EA7D3/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false",
+                downloadLink: "https://steamcommunity.com/sharedfiles/filedetails/?id=3329852387"
+            },
+            {
+                number: "42",
+                title: "Solar System",
+                description: "أضغط للتحميل",
+                thumbnail: "https://images.steamusercontent.com/ugc/1751306126565115127/DAAFFC195D76A57CF61ABC12400F31F024005BAE/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false",
+                downloadLink: "https://steamcommunity.com/sharedfiles/filedetails/?id=793602574"
+            },
+            {
+                number: "43",
+                title: "惬意生活【随时间变化】",
+                description: "أضغط للتحميل",
+                thumbnail: "https://images.steamusercontent.com/ugc/2424698456408706963/EFC91279143BC2BB094A51B47C05FE9B4FC6ED2B/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false",
+                downloadLink: "https://steamcommunity.com/sharedfiles/filedetails/?id=3201340265"
+            },
+            {
+                number: "44",
+                title: "Moon Cat",
+                description: "أضغط للتحميل",
+                thumbnail: "https://images.steamusercontent.com/ugc/2419084626535787447/7C09C9E8F2F0B703DB2008BFC8870D16B429DCF9/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false",
+                downloadLink: "https://steamcommunity.com/sharedfiles/filedetails/?id=3329696602"
+            },
+            {
+                number: "45",
+                title: "怡然林荫4K(有声)",
+                description: "أضغط للتحميل",
+                thumbnail: "https://images.steamusercontent.com/ugc/2113934678233863153/3DD0332A7ADEC1D34618303851FAD822718C6D60/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false",
+                downloadLink: "https://steamcommunity.com/sharedfiles/filedetails/?id=3047107935"
+            },
+            {
+                number: "46",
+                title: "Relax Ambience [4K]",
+                description: "أضغط للتحميل",
+                thumbnail: "https://images.steamusercontent.com/ugc/2501260100214670619/1F384341E09F4701BB64C4890D6B83049C3A1903/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false",
+                downloadLink: "https://steamcommunity.com/sharedfiles/filedetails/?id=3208739106"
+            },
+            {
+                number: "47",
+                title: "時の向う",
+                description: "أضغط للتحميل",
+                thumbnail: "https://images.steamusercontent.com/ugc/2469746952479363555/8AD37768E69F9281E9C04539D3AAB47F714C19BD/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false",
+                downloadLink: "https://steamcommunity.com/sharedfiles/filedetails/?id=3308194562"
+            },
+            {
+                number: "48",
+                title: "Entrance to Pass of Caradhras",
+                description: "أضغط للتحميل",
+                thumbnail: "https://images.steamusercontent.com/ugc/2310973676365964341/25BF4F78090F0E40D1963E18AC7AE265018E10A2/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false",
+                downloadLink: "https://steamcommunity.com/sharedfiles/filedetails/?id=3115408619"
+            },
+            {
+                number: "49",
+                title: "firewatch",
+                description: "أضغط للتحميل",
+                thumbnail: "https://images.steamusercontent.com/ugc/852718607801651586/F4619FD1B5563A652E486921C6D66E93A72E6040/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false",
+                downloadLink: "https://steamcommunity.com/sharedfiles/filedetails/?id=951259031"
+            },
+            {
+                number: "50",
+                title: "Summer by Gydwin in 4K",
+                description: "أضغط للتحميل",
+                thumbnail: "https://images.steamusercontent.com/ugc/1244631308529542050/6A715C2E99BC92179CEF2C7760AF8C1D687325A1/?imw=637&imh=358&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true",
+                downloadLink: "https://steamcommunity.com/sharedfiles/filedetails/?id=2138655350"
+            },
+            {
+                number: "51",
+                title: "Cottage in the forest",
+                description: "أضغط للتحميل",
+                thumbnail: "https://images.steamusercontent.com/ugc/1802024425338308459/A22F4AD4BB9B426A10FC6CB96952FDF35DB8392D/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false",
+                downloadLink: "https://steamcommunity.com/sharedfiles/filedetails/?id=2859047178"
+            },
+            {
+                number: "52",
+                title: "The Legend of Zelda (Ambient music)",
+                description: "أضغط للتحميل",
+                thumbnail: "https://images.steamusercontent.com/ugc/1869571911307764474/7E074325110800BE11CF74764D73C55E7CC796AF/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false",
+                downloadLink: "https://steamcommunity.com/sharedfiles/filedetails/?id=1339064732"
+            },
+            {
+                number: "53",
+                title: "Nier Automata: Lunar Garden",
+                description: "أضغط للتحميل",
+                thumbnail: "https://images.steamusercontent.com/ugc/2196127907138552243/564A27C00B7ABBCD0C714251D99EE747E9CE0A8D/?imw=637&imh=358&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true",
+                downloadLink: "https://steamcommunity.com/sharedfiles/filedetails/?id=3068206129"
+            },
+            {
+                number: "54",
+                title: "Fantasy Cottage Study Room",
+                description: "أضغط للتحميل",
+                thumbnail: "https://images.steamusercontent.com/ugc/2046376244182178278/F8C965599B81F7345B194F62697524D1D2761488/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false",
+                downloadLink: "https://steamcommunity.com/sharedfiles/filedetails/?id=3021767967"
+            },
+            {
+                number: "55",
+                title: "随心而行",
+                description: "أضغط للتحميل",
+                thumbnail: "https://images.steamusercontent.com/ugc/2459607511003599797/22A0F33D44D90C2395A6E593F23674A7DB08CB1D/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false",
+                downloadLink: "https://steamcommunity.com/sharedfiles/filedetails/?id=3259548276"
+            },
+            {
+                number: "56",
+                title: "One Piece - Luffy Scar 4K [Ultrawide Support]",
+                description: "أضغط للتحميل",
+                thumbnail: "https://images.steamusercontent.com/ugc/2477620007712820824/593FB86A52B95259E31D549BA8DCDA4B603D3738/?imw=637&imh=358&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true",
+                downloadLink: "https://steamcommunity.com/sharedfiles/filedetails/?id=3240960259"
+            },
+            {
+                number: "57",
+                title: "🍃庭🍃",
+                description: "أضغط للتحميل",
+                thumbnail: "https://images.steamusercontent.com/ugc/942810503171748621/7F0922E38D0F3775820E50752E0D61CD790CE6E0/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false",
+                downloadLink: "https://steamcommunity.com/sharedfiles/filedetails/?id=1281803757"
+            },
+            {
+                number: "58",
+                title: "Space is Beautiful",
+                description: "أضغط للتحميل",
+                thumbnail: "https://images.steamusercontent.com/ugc/2424502748355872830/3B21AAD53D205386EA4997B3022A39A9E5CAAF0D/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false",
+                downloadLink: "https://steamcommunity.com/sharedfiles/filedetails/?id=1368159273"
+            },
+            {
+                number: "59",
+                title: "Mechanical Switch",
+                description: "أضغط للتحميل",
+                thumbnail: "https://images.steamusercontent.com/ugc/1634200214164197175/515991EFB6FADC3C451AC4F6EBE4EBA5E9F8961B/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false",
+                downloadLink: "https://steamcommunity.com/sharedfiles/filedetails/?id=2228775969"
+            },
+            {
+                number: "60",
+                title: "Roronoa Zoro",
+                description: "أضغط للتحميل",
+                thumbnail: "https://images.steamusercontent.com/ugc/1754694763446431546/F95432DADF0DE20CBF316450E6B8B7FBFBC339A2/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false",
+                downloadLink: "https://steamcommunity.com/sharedfiles/filedetails/?id=2499344078"
+            },
+            {
+                number: "61",
+                title: "Sealed",
+                description: "أضغط للتحميل",
+                thumbnail: "https://images.steamusercontent.com/ugc/1688276024726936489/476994DFC9D1DD68D46F87DF8E10A56FCC12B9D7/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false",
+                downloadLink: "https://steamcommunity.com/sharedfiles/filedetails/?id=2504353624"
+            },
+            {
+                number: "62",
+                title: "Astronaut",
+                description: "أضغط للتحميل",
+                thumbnail: "https://images.steamusercontent.com/ugc/1688276024726961565/9DDC43274660B1A3F9CDFCC4612AC273B964D5D4/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false",
+                downloadLink: "https://steamcommunity.com/sharedfiles/filedetails/?id=2530355779"
+            },
+            {
+                number: "63",
+                title: "Japanese Town",
+                description: "أضغط للتحميل",
+                thumbnail: "https://images.steamusercontent.com/ugc/1865050644912503825/ED6AB819B0B44490433678C7A96445FF4E893C02/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false",
+                downloadLink: "https://steamcommunity.com/sharedfiles/filedetails/?id=2677854304"
+            },
+            {
+                number: "64",
+                title: "小屋花草",
+                description: "أضغط للتحميل",
+                thumbnail: "https://images.steamusercontent.com/ugc/2013720661752872771/CA54F2C61ED538A43EF1AF923106EBBDA39A4802/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false",
+                downloadLink: "https://steamcommunity.com/sharedfiles/filedetails/?id=2995369775"
+            },
+            {
+                number: "65",
+                title: "Frog Picnic by Abi Toads",
+                description: "أضغط للتحميل",
+                thumbnail: "https://images.steamusercontent.com/ugc/2476491741613591327/0879D0B99F68471F54B268DFF3C1555DD2DDC10C/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false",
+                downloadLink: "https://steamcommunity.com/sharedfiles/filedetails/?id=3219522309"
+            },
+            {
+                number: "66",
+                title: "Highway In The Clouds by VISUALDON",
+                description: "أضغط للتحميل",
+                thumbnail: "https://images.steamusercontent.com/ugc/1807641708337152048/93D2B3D967F95E3DDBD67750848E4E6FAEDD0688/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false",
+                downloadLink: "https://steamcommunity.com/sharedfiles/filedetails/?id=2798072874"
+            },
+            {
+                number: "67",
+                title: "Ghibli Coffee Shop ☕️ 4K",
+                description: "أضغط للتحميل",
+                thumbnail: "https://images.steamusercontent.com/ugc/2473124017154211158/EFDB54C35EED821E1075CD1AEB2AC2BE11E590C3/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false",
+                downloadLink: "https://steamcommunity.com/sharedfiles/filedetails/?id=3303387977"
+            },
+            {
+                number: "68",
+                title: "Sakura",
+                description: "أضغط للتحميل",
+                thumbnail: "https://images.steamusercontent.com/ugc/1843666793273686108/FE28885E68F3936C56F00090EF6505E43E51428B/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false",
+                downloadLink: "https://steamcommunity.com/sharedfiles/filedetails/?id=2776440708"
+            },
+            {
+                number: "69",
+                title: "Wallpaper",
+                description: "أضغط للتحميل",
+                thumbnail: "https://images.steamusercontent.com/ugc/1055477997964355482/F4221349E11C610CC6C72E5E19A9EE82FFFB3824/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false",
+                downloadLink: "https://steamcommunity.com/sharedfiles/filedetails/?id=2112603865"
+            },
+            {
+                number: "70",
+                title: "Outlast 2 Eerie Moon 21:9 3440x1440 60fps",
+                description: "أضغط للتحميل",
+                thumbnail: "https://images.steamusercontent.com/ugc/824566203547706042/35BEB6F2AD12246AEEC6248682734CBAA826E7AD/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false",
+                downloadLink: "https://steamcommunity.com/sharedfiles/filedetails/?id=913311330"
+            },
+            {
+                number: "71",
+                title: "Good rest [4k]",
+                description: "أضغط للتحميل",
+                thumbnail: "https://images.steamusercontent.com/ugc/2041874097463270981/77AF74C0CAB9EBBD78E7D816020A33BA747A4D0D/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false",
+                downloadLink: "https://steamcommunity.com/sharedfiles/filedetails/?id=3028249382"
+            },
+            {
+                number: "72",
+                title: "Floating Ducks.",
+                description: "أضغط للتحميل",
+                thumbnail: "https://images.steamusercontent.com/ugc/13043916867930424/484C6B28E15220A148731E497FE967284CCF1521/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false",
+                downloadLink: "https://steamcommunity.com/sharedfiles/filedetails/?id=3377132665"
+            },
+            {
+                number: "73",
+                title: "[Aviino] - [Cocoon] [Official Chillhop Music wallpaper",
+                description: "أضغط للتحميل",
+                thumbnail: "https://images.steamusercontent.com/ugc/1815520471659075761/B9461D31E522160AD6EE182721852E3CAB62B1AB/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false",
+                downloadLink: "https://steamcommunity.com/sharedfiles/filedetails/?id=2783765808"
+            },
+            {
+                number: "74",
+                title: "'Japanese Town' by 三叠色",
+                description: "أضغط للتحميل",
+                thumbnail: "https://images.steamusercontent.com/ugc/1753557904415185642/5963594F7929B1A45B2FA3D5E885D2D76F626254/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false",
+                downloadLink: "https://steamcommunity.com/sharedfiles/filedetails/?id=2374964197"
+            },
+            {
+                number: "75",
+                title: "Above New York City v2 [4K]",
+                description: "أضغط للتحميل",
+                thumbnail: "https://images.steamusercontent.com/ugc/761600337171617428/4B1C7AAC91A996FBF8FAFD87A93B91ED7E4F42F5/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false",
+                downloadLink: "https://steamcommunity.com/sharedfiles/filedetails/?id=1915396780"
+            },
+            {
+                number: "76",
+                title: "[OBSOLETE] Space",
+                description: "أضغط للتحميل",
+                thumbnail: "https://images.steamusercontent.com/ugc/1818887917187784494/E805867495AB7B00757E29EBDFFE3C3A58A69BC1/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false",
+                downloadLink: "https://steamcommunity.com/sharedfiles/filedetails/?id=1968447563"
+            },
+            {
+                number: "77",
+                title: "Cosmic",
+                description: "أضغط للتحميل",
+                thumbnail: "https://images.steamusercontent.com/ugc/14542459926101235123/0E2764A1BD19D07BEDFD227CD1941DA75BD2C581/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false",
+                downloadLink: "https://steamcommunity.com/sharedfiles/filedetails/?id=3488144243"
+            },
+            {
+                number: "78",
+                title: "Cloudchord x G Mills - Cruisin' [Official Chillhop Music wallpaper]",
+                description: "أضغط للتحميل",
+                thumbnail: "https://images.steamusercontent.com/ugc/790885445893447746/92146F12FA697E6CBA4B8D90EA4CC4F629A1217E/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false",
+                downloadLink: "https://steamcommunity.com/sharedfiles/filedetails/?id=2032678263"
+            },
+            {
+                number: "79",
+                title: "one-piece-brook-souls-voyage",
+                description: "أضغط للتحميل",
+                thumbnail: "https://images.steamusercontent.com/ugc/14235353633938199769/773AB68672CAA4982AB5B6D1F86070647A06F3E0/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false",
+                downloadLink: "https://steamcommunity.com/sharedfiles/filedetails/?id=3608108972"
+            },
+            {
+                number: "80",
+                title: "Full Moon [FHD]",
+                description: "أضغط للتحميل",
+                thumbnail: "https://images.steamusercontent.com/ugc/957462736263897319/35709898AB80163286D3745734212D74A40CE28E/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false",
+                downloadLink: "https://steamcommunity.com/sharedfiles/filedetails/?id=1441736444"
+            },
+            {
+                number: "81",
+                title: "جبال وغيوم",
+                description: "أضغط للتحميل",
+                thumbnail: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400",
+                downloadLink: "https://example.com/wallpaper5.zip"
+            },
+            {
+                number: "82",
+                title: "غابة خضراء",
+                description: "أضغط للتحميل",
+                thumbnail: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=400",
+                downloadLink: "https://example.com/wallpaper6.zip"
+            },
+            {
+                number: "83",
+                title: "شاطئ استوائي",
+                description: "أضغط للتحميل",
+                thumbnail: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400",
+                downloadLink: "https://example.com/wallpaper7.zip"
+            },
+            {
+                number: "84",
+                title: "شاطئ استوائي",
+                description: "أضغط للتحميل",
+                thumbnail: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400",
+                downloadLink: "https://example.com/wallpaper7.zip"
+            },
+            {
+                number: "85",
+                title: "سماء ليلية",
+                description: "أضغط للتحميل",
+                thumbnail: "https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=400",
+                downloadLink: "https://example.com/wallpaper8.zip"
+            },
+            {
+                number: "86",
+                title: "خلفية مجردة حديثة",
+                description: "أضغط للتحميل",
+                thumbnail: "https://images.unsplash.com/photo-1557683316-973673baf926?w=400",
+                downloadLink: "https://example.com/wallpaper2.zip"
+            },
+            {
+                number: "87",
+                title: "فضاء وكواكب",
+                description: "أضغط للتحميل",
+                thumbnail: "https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=400",
+                downloadLink: "https://example.com/wallpaper3.zip"
+            },
+            {
+                number: "88",
+                title: "مدينة مستقبلية",
+                description: "أضغط للتحميل",
+                thumbnail: "https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?w=400",
+                downloadLink: "https://example.com/wallpaper4.zip"
+            }
+
+
+
+            // أضف باقي الـ 72 خلفية هنا بنفس الطريقة
+        ];
+
+        // بيانات البرامج - عدل هنا لإضافة برامجك
+        const programs = [
+            {
+                title: "CompactGUI",
+                description: "برنامج ضغط الملفات والبرامج والالعاب",
+                thumbnail: "https://private-user-images.githubusercontent.com/1491536/466896093-3aaad7cb-a4d2-498c-b821-a2456ffab6a4.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Njk1MTUxMTgsIm5iZiI6MTc2OTUxNDgxOCwicGF0aCI6Ii8xNDkxNTM2LzQ2Njg5NjA5My0zYWFhZDdjYi1hNGQyLTQ5OGMtYjgyMS1hMjQ1NmZmYWI2YTQucG5nP1gtQW16LUFsZ29yaXRobT1BV1M0LUhNQUMtU0hBMjU2JlgtQW16LUNyZWRlbnRpYWw9QUtJQVZDT0RZTFNBNTNQUUs0WkElMkYyMDI2MDEyNyUyRnVzLWVhc3QtMSUyRnMzJTJGYXdzNF9yZXF1ZXN0JlgtQW16LURhdGU9MjAyNjAxMjdUMTE1MzM4WiZYLUFtei1FeHBpcmVzPTMwMCZYLUFtei1TaWduYXR1cmU9OTdhOWFjZWRjM2I0YWVhZGM1YTQxNzRjY2Y3Njk5MmNjZTE4YTc4NjgzMzg1OTkwN2ZlNDgxMmMxY2E2ZTk1YSZYLUFtei1TaWduZWRIZWFkZXJzPWhvc3QifQ.uMQDnYIfcBMxuXN7xx6y7jcvPQUrWG_u31bGvzaUhI0",
+                downloadLink: "https://github.com/IridiumIO/CompactGUI/releases/tag/v4.0.0-beta.6",
+                badge: "مجاني"
+            },
+            {
+                title: "Windows Recyclebin Themes",
+                description: "تغيير ايقونات سلة المهملات",
+                thumbnail: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=400",
+                downloadLink: "https://github.com/sdushantha/recycle-bin-themes?tab=readme-ov-file",
+                badge: "مجاني"
+            },
+            {
+                title: "Parabolic",
+                description: "برنامج التحميل",
+                thumbnail: "https://github.com/NickvisionApps/Parabolic/blob/main/resources/banner.png?raw=true",
+                downloadLink: "https://github.com/NickvisionApps/Parabolic/releases",
+                badge: "مجاني"
+            },
+            {
+                title: "SteamDB Plugin for Millennium",
+                description: "SteamDB اضافة",
+                thumbnail: "https://raw.githubusercontent.com/BossSloth/Steam-SteamDB-extension/c10faef6d9c59916da6b9c5e187231346d2a890d/Images/steam_store.png",
+                downloadLink: "https://steambrew.app/plugin?id=c36d5f67c99f",
+                badge: "مجاني"
+            },
+            {
+                title: "Steam Auto Shutdown",
+                description: "برنامج ايقاف التشغيل التلقائي بعد التحميل - Auto Shutdown",
+                thumbnail: "https://camo.githubusercontent.com/66fe1bd13560b7002a3603c74d6b4e2f4008d6a4598e3ce245e204ca321f1566/68747470733a2f2f692e696d6775722e636f6d2f6a6c4a466d4c432e6a7067",
+                downloadLink: "https://github.com/diogomartino/steam-auto-shutdown/releases",
+                badge: "مجاني"
+            },
+            {
+                title: "ExplorerBlurMica",
+                description: "فيديو تغيير مستكشف الملفات - File Explorer",
+                thumbnail: "https://images.unsplash.com/photo-1555421689-491a97ff2040?w=400",
+                downloadLink: "https://github.com/Maplespe/ExplorerBlurMica/",
+                badge: "مجاني"
+            }
+        ];
+
+        // عرض الخلفيات
+        function renderWallpapers() {
+            const grid = document.getElementById('wallpapers-grid');
+            wallpapers.forEach(wallpaper => {
+                const card = document.createElement('a');
+                card.className = 'card';
+                card.href = wallpaper.downloadLink;
+                card.target = '_blank';
+                
+                // تتبع النقرات في Google Analytics
+                card.addEventListener('click', function(e) {
+                    if (typeof gtag !== 'undefined') {
+                        gtag('event', 'wallpaper_click', {
+                            'event_category': 'Download',
+                            'event_label': `خلفية #${wallpaper.number} - ${wallpaper.title}`,
+                            'value': wallpaper.number
+                        });
+                    }
+                });
+                
+                card.innerHTML = `
+                    <div class="card-image">
+                        <img src="${wallpaper.thumbnail}" alt="${wallpaper.title}" loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-number">#${wallpaper.number}</span>
+                        <h3 class="card-title">${wallpaper.title}</h3>
+                        <p class="card-description">${wallpaper.description}</p>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        // عرض البرامج
+        function renderPrograms() {
+            const grid = document.getElementById('programs-grid');
+            programs.forEach(program => {
+                const card = document.createElement('a');
+                card.className = 'card program-card';
+                card.href = program.downloadLink;
+                card.target = '_blank';
+                
+                // تتبع النقرات في Google Analytics
+                card.addEventListener('click', function(e) {
+                    if (typeof gtag !== 'undefined') {
+                        gtag('event', 'program_click', {
+                            'event_category': 'Download',
+                            'event_label': `برنامج - ${program.title}`,
+                            'value': 1
+                        });
+                    }
+                });
+                
+                card.innerHTML = `
+                    <div class="card-image">
+                        <img src="${program.thumbnail}" alt="${program.title}" loading="lazy">
+                        <span class="card-badge">${program.badge}</span>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">${program.title}</h3>
+                        <p class="card-description">${program.description}</p>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        // وظيفة البحث
+        function setupSearch() {
+            const searchInput = document.getElementById('searchInput');
+            const clearBtn = document.getElementById('clearSearch');
+            const searchResultsInfo = document.getElementById('searchResultsInfo');
+            const noResults = document.getElementById('noResults');
+            const wallpapersSection = document.querySelector('.section:has(#wallpapers-grid)');
+            const programsSection = document.querySelector('.section:has(#programs-grid)');
+
+            searchInput.addEventListener('input', function() {
+                const searchTerm = this.value.trim().toLowerCase();
+                
+                // إظهار/إخفاء زر المسح
+                if (searchTerm) {
+                    clearBtn.classList.add('active');
+                } else {
+                    clearBtn.classList.remove('active');
+                }
+
+                // إذا كان البحث فارغ، عرض كل شي
+                if (!searchTerm) {
+                    showAllItems();
+                    searchResultsInfo.classList.remove('active');
+                    noResults.classList.remove('active');
+                    return;
+                }
+
+                // البحث في الخلفيات والبرامج
+                let wallpaperResults = 0;
+                let programResults = 0;
+
+                // البحث في الخلفيات
+                document.querySelectorAll('#wallpapers-grid .card').forEach(card => {
+                    const number = card.querySelector('.card-number').textContent.replace('#', '');
+                    const title = card.querySelector('.card-title').textContent.toLowerCase();
+                    const description = card.querySelector('.card-description').textContent.toLowerCase();
+                    
+                    if (number.includes(searchTerm) || 
+                        title.includes(searchTerm) || 
+                        description.includes(searchTerm)) {
+                        card.style.display = 'block';
+                        wallpaperResults++;
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+
+                // البحث في البرامج
+                document.querySelectorAll('#programs-grid .card').forEach(card => {
+                    const title = card.querySelector('.card-title').textContent.toLowerCase();
+                    const description = card.querySelector('.card-description').textContent.toLowerCase();
+                    
+                    if (title.includes(searchTerm) || description.includes(searchTerm)) {
+                        card.style.display = 'block';
+                        programResults++;
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+
+                // عرض/إخفاء الأقسام
+                if (wallpaperResults === 0) {
+                    wallpapersSection.style.display = 'none';
+                } else {
+                    wallpapersSection.style.display = 'block';
+                }
+
+                if (programResults === 0) {
+                    programsSection.style.display = 'none';
+                } else {
+                    programsSection.style.display = 'block';
+                }
+
+                // عرض معلومات النتائج
+                const totalResults = wallpaperResults + programResults;
+                if (totalResults > 0) {
+                    let resultText = `تم العثور على `;
+                    if (wallpaperResults > 0) {
+                        resultText += `${wallpaperResults} خلفية`;
+                    }
+                    if (wallpaperResults > 0 && programResults > 0) {
+                        resultText += ` و `;
+                    }
+                    if (programResults > 0) {
+                        resultText += `${programResults} برنامج`;
+                    }
+                    searchResultsInfo.textContent = resultText;
+                    searchResultsInfo.classList.add('active');
+                    noResults.classList.remove('active');
+                } else {
+                    searchResultsInfo.classList.remove('active');
+                    noResults.classList.add('active');
+                }
+
+                // تتبع البحث في Google Analytics
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'search', {
+                        'event_category': 'Search',
+                        'event_label': searchTerm,
+                        'value': totalResults
+                    });
+                }
+            });
+
+            // زر المسح
+            clearBtn.addEventListener('click', function() {
+                searchInput.value = '';
+                clearBtn.classList.remove('active');
+                showAllItems();
+                searchResultsInfo.classList.remove('active');
+                noResults.classList.remove('active');
+                searchInput.focus();
+            });
+
+            // مسح البحث بزر ESC
+            searchInput.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    searchInput.value = '';
+                    clearBtn.classList.remove('active');
+                    showAllItems();
+                    searchResultsInfo.classList.remove('active');
+                    noResults.classList.remove('active');
+                }
+            });
+        }
+
+        // إظهار كل العناصر
+        function showAllItems() {
+            document.querySelectorAll('#wallpapers-grid .card, #programs-grid .card').forEach(card => {
+                card.style.display = 'block';
+            });
+            document.querySelector('.section:has(#wallpapers-grid)').style.display = 'block';
+            document.querySelector('.section:has(#programs-grid)').style.display = 'block';
+        }
+
+        // تشغيل عند تحميل الصفحة
+        document.addEventListener('DOMContentLoaded', () => {
+            renderWallpapers();
+            renderPrograms();
+            setupSearch();
+        });
+    </script>
+</body>
+</html>
