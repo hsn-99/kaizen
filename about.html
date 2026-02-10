@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>من نحن | About - كايزن</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0a0a0a;
+            --bg-card: #1a1a1a;
+            --accent-primary: #00ff88;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0a0;
+            --border-color: #2a2a2a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.8;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: var(--bg-card);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+        }
+
+        h1 {
+            color: var(--accent-primary);
+            margin-bottom: 30px;
+            font-size: 2.5rem;
+            text-align: center;
+        }
+
+        h2 {
+            color: var(--text-primary);
+            margin-top: 40px;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        p {
+            margin-bottom: 15px;
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .interests-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .interests-list li {
+            padding: 10px 15px;
+            margin-bottom: 8px;
+            background: var(--bg-primary);
+            border-radius: 8px;
+            color: var(--text-secondary);
+            border-right: 3px solid var(--accent-primary);
+        }
+
+        .contact-links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px;
+            background: var(--bg-primary);
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: var(--text-secondary);
+        }
+
+        .contact-item:hover {
+            border-color: var(--accent-primary);
+            transform: translateX(-5px);
+        }
+
+        .contact-icon {
+            font-size: 1.5rem;
+            min-width: 30px;
+            text-align: center;
+        }
+
+        .contact-label {
+            font-weight: 600;
+            color: var(--text-primary);
+            min-width: 100px;
+        }
+
+        .contact-value {
+            color: var(--accent-primary);
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 40px;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, var(--accent-primary), #00ccff);
+            color: var(--bg-primary);
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: transform 0.3s ease;
+        }
+
+        .back-link:hover {
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 25px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+
+            .contact-item {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .contact-label {
+                min-width: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>من نحن</h1>
+
+        <!-- نبذة عني -->
+        <div class="section">
+            <h2>📝 نبذة</h2>
+            <p>
+                مرحباً! أنا صانع محتوى متخصص في عالم ألألعاب والـ PC. شغوف بمشاركة المراجعات، الشروحات، وكل ما يهم اللاعبين لتحسين الأداء وتجربة اللعب.
+            </p>
+        </div>
+
+        <!-- الاهتمامات -->
+        <div class="section">
+            <h2>⭐ اهتماماتي</h2>
+            <ul class="interests-list">
+                <li>🎮 الألعاب بمختلف أنواعها وتجارب اللعب</li>
+                <li>💻 الكمبيوتر وتجميعات الـ PC والعتاد</li>
+                <li>🛠️  مراجعة الأدوات، الإعدادات، وتحسين تجربة المستخدم</li>
+                <li>📱 إنشاء محتوى تقني تعليمي </li>
+                <li>🎬 تصوير ومونتاج الفيديوهات التقنية</li>
+            </ul>
+        </div>
+
+        <!-- المهمة -->
+        <div class="section">
+            <h2>🎯 المهمة</h2>
+            <p>
+                الالهدف من كايزن هو توفير مكتبة منظمة وسهلة الوصول لكل ما أشاركه عن ألعاب الـ PC والكمبيوتر، من أدوات، إعدادات، وبرامج مستخدمة في مقاطع تيك توك وإنستقرام. بدلاً من تشتت الروابط، تم إنشاء مكان واحد يجمع كل شيء مع إمكانية البحث السريع.
+            </p>
+        </div>
+
+        <!-- ماذا أقدم -->
+        <div class="section">
+            <h2>✨ ماذا أقدم</h2>
+            <p>
+                <strong style="color: var(--text-primary);">🎮 محتوى الألعاب:</strong><br>
+                تغطية ألعاب الـ PC المجانية، مع مراجعة سريعة ومختصرة.</p>
+            <p>
+                <strong style="color: var(--text-primary);">💻 الكمبيوتر والـ PC:</strong><br>
+                محتوى متخصص في كل ما يخص الكمبيوتر من برامج وأدوات وخلفيات ومراجعات.
+            </p>
+            <p>
+                <strong style="color: var(--text-primary);">🎬 محتوى تقني تعليمي:</strong><br>
+                مقاطع فيديو قصيرة تشرح طريقة استخدام البرامج والأدوات بشكل بسيط ومباشر.
+            </p>
+        </div>
+
+        <!-- التواصل -->
+        <div class="section">
+            <h2>📞 التواصل</h2>
+            <div class="contact-links">
+                <a href="mailto:k4izen.sa@gmail.com" class="contact-item">
+                    <span class="contact-icon">📧</span>
+                    <span class="contact-label">البريد الإلكتروني</span>
+                    <span class="contact-value">k4izen.sa@gmail.com</span>
+                </a>
+
+                <a href="https://instagram.com/k41zen_1" target="_blank" class="contact-item">
+                    <span class="contact-icon">📸</span>
+                    <span class="contact-label">انستقرام</span>
+                    <span class="contact-value">@k41zen_1</span>
+                </a>
+
+                <a href="https://youtube.com/@k41zen_1" target="_blank" class="contact-item">
+                    <span class="contact-icon">▶️</span>
+                    <span class="contact-label">يوتيوب</span>
+                    <span class="contact-value">@K41zen_1</span>
+                </a>
+
+                <a href="https://tiktok.com/@k41zen_1" target="_blank" class="contact-item">
+                    <span class="contact-icon">📱</span>
+                    <span class="contact-label">تيك توك</span>
+                    <span class="contact-value">@k41zen_1</span>
+                </a>
+
+            </div>
+        </div>
+
+        <div style="text-align: center;">
+            <a href="index.html" class="back-link">← العودة للصفحة الرئيسية</a>
+        </div>
+    </div>
+</body>
+</html>
